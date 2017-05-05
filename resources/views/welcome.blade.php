@@ -79,7 +79,12 @@
 
     <div class="content">
         <div class="title m-b-md">
-            welcome laravel
+
+    @php
+
+    echo $name;
+    @endphp
+
         </div>
 
         <div class="links">
