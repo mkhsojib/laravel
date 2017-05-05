@@ -85,6 +85,8 @@
     echo $name;
     @endphp
 
+
+
         </div>
 
         <div class="links">
