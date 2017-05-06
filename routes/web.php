@@ -17,4 +17,7 @@ Route::get('/', function () {
 
 
 
-Route::get('/service','HelloController@index');
+//Route::get('/service','HelloController@index');
+
+
+Route::get('/department','DepartmentController@index');
