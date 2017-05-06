@@ -11,6 +11,23 @@ class DepartmentController extends Controller
     {
         $departments = Department::paginate(15);
 
-        return view('departments.index',compact('departments'));
+        return view('departments.index', compact('departments'));
+    }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|unique:departments,name',
+            'code' => 'required|unique:departments,code',
+
+        ]);
+        $department = new Department();
+
+        $department->name = $request->name;
+        $department->code = $request->code;
+
+        $department->save();
+
+
     }
 }

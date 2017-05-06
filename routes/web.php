@@ -21,3 +21,4 @@ Route::get('/', function () {
 
 
 Route::get('/department','DepartmentController@index');
+Route::post('/department/store','DepartmentController@store');
