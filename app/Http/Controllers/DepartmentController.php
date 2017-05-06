@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Department;
 use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
 {
     public function index()
     {
-        return view('layouts.master');
+        $departments = Department::paginate(15);
+
+        return view('departments.index',compact('departments'));
     }
 }
