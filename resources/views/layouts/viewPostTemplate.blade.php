@@ -29,6 +29,16 @@
 
 </head>
 <body>
+{{--facebook comment api--}}
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9&appId=758664680863917";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
 <div class="container">
 
 
@@ -69,50 +79,10 @@
         <h1> Welcome to our blog</h1>
     </div>
 
-    {{--nav bar start--}}
-    <nav class="navbar navbar-default">
-
-        <div class="container-fluid">
-
-            <ul class="nav navbar-nav">
-
-                <li class="dropdown">
-
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Sort Posts By <span class="caret">
-
-                        </span></a>
-                    <ul class="dropdown-menu">
-
-                        <li><a href="">Top 10 Most Recent Post</a></li>
-                        <li><a href="">Top 10 Likded Posts</a></li>
-                        <li><a href="">Top 10 Most Commented Posts</a></li>
-                        <li><a href="">Top 10 Most Visited Posts</a></li>
-
-                    </ul>
-                </li>
-
-
-            </ul>
-
-            @if(Auth::check())
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ route('posts.index') }}">Manage Blog Posts</a></li>
-                </ul>
-            @endif
-
-
-        </div>
-
-
-    </nav>
-
-
-    {{--nav bar end--}}
 
 
     <div>
 
-        <h2> Top 10 Most Recent Blogs</h2>
 
         @yield('content')
         <div class="footer text-center" style="margin:20px 0 60px 0;">

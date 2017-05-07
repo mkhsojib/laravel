@@ -37,6 +37,8 @@ class PostController extends Controller
     public function create()
     {
         return view('adminPanel/create');
+
+        // error ta kothay
     }
 
     /**
@@ -73,9 +75,26 @@ class PostController extends Controller
      * @param  \App\Post $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+
+
+//    public function show(Post $post )
+// web view ta dadkhean bhi     {
+//
+//    }
+
+    public function show($id)
     {
-        //
+
+        $post = Post::find($id)->first();
+
+        $data = array(
+
+            'id' => $id,
+            'post' => $post
+
+        );
+
+        return view('blog.view_post',$data);
     }
 
     /**

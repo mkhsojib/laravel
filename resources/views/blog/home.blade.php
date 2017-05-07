@@ -16,7 +16,10 @@
                 <div class="well well-lg">
 
                     <h3> {{ $post->title }}</h3>
+                    <p>{{ $post->created_at->diffForHumans(Carbon\Carbon::now())}}</p>
                     <p>{{ $post->body }}</p>
+                    <a href="{{ route('posts.show',['id'=>$post->id]) }}" class="btn btn-default pull-right">Read More</a>
+                    &nbsp;
                 </div>
 
             @endforeach
