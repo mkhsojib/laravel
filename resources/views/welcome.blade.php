@@ -80,11 +80,7 @@
     <div class="content">
         <div class="title m-b-md">
 
-            @php
-
-                echo $name;
-            @endphp
-
+          Laravel
 
         </div>
 
