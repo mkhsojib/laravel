@@ -23,11 +23,14 @@
 //Route::post('/department/store', 'DepartmentController@store');
 
 
-Route::get('/', function () {
-    return view('blog/home');
-});
+//Route::get('/', function () {
+//    return view('blog/home');
+//});
+
+Route::get('/','PostController@publicHomePage');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('posts','postController');
+Route::resource('posts', 'postController');

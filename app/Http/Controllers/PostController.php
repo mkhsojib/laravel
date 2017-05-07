@@ -14,6 +14,14 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function publicHomePage()
+    {
+        $posts = Post::paginate(10);
+        return view('blog/home',['posts'=>$posts]);
+    }
+    
     public function index()
     {
         $loggedInUserId = Auth::id();
