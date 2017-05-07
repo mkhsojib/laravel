@@ -28,20 +28,20 @@
 
 
     <style type="text/css">
-    .headingBox{
-        position: relative;
-    }
+        .headingBox {
+            position: relative;
+        }
 
-        .loginBox{
+        .loginBox {
 
             position: absolute;
-            top:0;
+            top: 0;
             right: 0;
             margin-top: 10px;
 
         }
 
-        .loginBox a{
+        .loginBox a {
             color: #0d3625;
         }
     </style>
@@ -90,7 +90,6 @@
         </div>
 
 
-
     </div>
 
 
@@ -118,9 +117,13 @@
 
 
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="">Manage Blog Posts</a></li>
-            </ul>
+
+            @if(Auth::check())
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ route('posts.index') }}">Manage Blog Posts</a></li>
+                </ul>
+            @endif
+
 
         </div>
 
