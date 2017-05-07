@@ -80,11 +80,10 @@
     <div class="content">
         <div class="title m-b-md">
 
-    @php
+            @php
 
-    echo $name;
-    @endphp
-
+                echo $name;
+            @endphp
 
 
         </div>

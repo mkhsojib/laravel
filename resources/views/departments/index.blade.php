@@ -5,42 +5,42 @@
     <h1 class="mytest">Department list</h1>
 
     <div class="row">
-<div class="col md-12">
+        <div class="col md-12">
 
 
-    @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-        {!! Form::open(['url' => 'department/store','class'=>'form-horizontal']) !!}
-        <div class="form-group">
-            {{ Form::label('name', 'enter department name', ['class' => 'col-sm-2 control-label']) }}
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            {!! Form::open(['url' => 'department/store','class'=>'form-horizontal']) !!}
+            <div class="form-group">
+                {{ Form::label('name', 'enter department name', ['class' => 'col-sm-2 control-label']) }}
 
-            <div class="col-sm-10">
-                {{ Form::text('name', '', ['class' => 'form-control']) }}
+                <div class="col-sm-10">
+                    {{ Form::text('name', '', ['class' => 'form-control']) }}
 
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            {{ Form::label('code', 'enter department code', ['class' => 'col-sm-2 control-label']) }}
-            <div class="col-sm-10">
-                {{ Form::text('code', '', ['class' => 'form-control']) }}
+            <div class="form-group">
+                {{ Form::label('code', 'enter department code', ['class' => 'col-sm-2 control-label']) }}
+                <div class="col-sm-10">
+                    {{ Form::text('code', '', ['class' => 'form-control']) }}
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                {{ Form::submit('Save',['class' => 'btn btn-primary']) }}
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    {{ Form::submit('Save',['class' => 'btn btn-primary']) }}
 
+                </div>
             </div>
+            {!! Form::close() !!}
         </div>
-    {!! Form::close() !!}
-</div>
 
         <div class="col-md-12">
 

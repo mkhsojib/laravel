@@ -11,14 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome')->with('name','sojib');
-});
-
+//Route::get('/', function () {
+//    return view('welcome')->with('name', 'sojib');
+//});
 
 
 //Route::get('/service','HelloController@index');
 
 
-Route::get('/department','DepartmentController@index');
-Route::post('/department/store','DepartmentController@store');
+//Route::get('/department', 'DepartmentController@index');
+//Route::post('/department/store', 'DepartmentController@store');
+
+
+Route::get('/', function () {
+    return view('blog/home');
+});

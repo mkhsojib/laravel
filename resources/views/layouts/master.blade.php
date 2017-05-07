@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
-
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/bootstrap-theme.min.css') }}">
 
@@ -27,8 +26,6 @@
 
 <script type="javascript" src="{{ url('js/bootstrap.min.js') }}"></script>
 @yield('projectjs')
-
-
 
 
 </body>
