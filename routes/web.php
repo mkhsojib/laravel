@@ -27,7 +27,7 @@
 //    return view('blog/home');
 //});
 
-Route::get('/','PostController@publicHomePage');
+Route::get('/','PostController@publicHomePage')->name('getPublic');
 
 Auth::routes();
 

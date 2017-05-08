@@ -83,10 +83,11 @@
                         </span></a>
                     <ul class="dropdown-menu">
 
-                        <li><a href="">Top 10 Most Recent Post</a></li>
-                        <li><a href="">Top 10 Likded Posts</a></li>
-                        <li><a href="">Top 10 Most Commented Posts</a></li>
-                        <li><a href="">Top 10 Most Visited Posts</a></li>
+                        <li><a href="{{ route('getPublic',['type'=>'recentPosts']) }}">Top 10 Most Recent Post</a></li>
+
+                        <li><a href="{{ route('getPublic',['type'=>'mostCommented']) }}">Top 10 Most Commented Posts</a>
+                        </li>
+
 
                     </ul>
                 </li>

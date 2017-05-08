@@ -18,10 +18,16 @@ class PostController extends Controller
 
     public function publicHomePage()
     {
-        $posts = Post::paginate(10);
-        return view('blog/home',['posts'=>$posts]);
+
+
+      $posts = Post::paginate(10);
+
+//        $posts = Post::orderBy('desc')->paginate(10);
+
+
+        return view('blog/home', ['posts' => $posts]);
     }
-    
+
     public function index()
     {
         $loggedInUserId = Auth::id();
@@ -94,7 +100,7 @@ class PostController extends Controller
 
         );
 
-        return view('blog.view_post',$data);
+        return view('blog.view_post', $data);
     }
 
     /**
@@ -105,7 +111,9 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+      $post = Post::find($post);
+
+      return view('adminPanel.edit',['post'=>$post]);
     }
 
     /**
@@ -117,7 +125,23 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+       if(isset($request->title)){
+
+           $post->title = $request_title;
+
+
+       }
+
+        if(isset($request->body)){
+
+            $post->body = $request_body;
+
+            $post->save();
+
+            return redirect()->route('posts.show',['id'=>$id]);
+
+
+        }
     }
 
     /**

@@ -29,7 +29,7 @@
             </ul>
         </li>
     </div>
-    <h1>Admin Panel</h1>
+    <h1>Dashboard</h1>
 
     <a href="{{ route('posts.create') }}" class="btn btn-primary pull-right">Add new blog post</a>
     <br><br><br>
@@ -50,7 +50,7 @@
                 <td>{{ $post->id }}</td>
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->body }}</td>
-                <td>Edit</td>
+                <td><a href="{{ route('posts.edit',['id'=>$post->id]) }}" class="btn btn-info">edit</a></td>
                 <td>Del</td>
             </tr>
 
