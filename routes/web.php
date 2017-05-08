@@ -5,32 +5,19 @@
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| This file is where you may define all of the routes that are handled
+| by your application. Just tell Laravel the URIs it should respond
+| to using a Closure or controller method. Build something great!
 |
 */
 
 //Route::get('/', function () {
-//    return view('welcome')->with('name', 'sojib');
+//    return view('welcome');
 //});
 
-
-//Route::get('/service','HelloController@index');
-
-
-//Route::get('/department', 'DepartmentController@index');
-//Route::post('/department/store', 'DepartmentController@store');
-
-
-//Route::get('/', function () {
-//    return view('blog/home');
-//});
-
-Route::get('/','PostController@publicHomePage')->name('getPublic');
-
+Route::get('/', 'BlogController@publicHomePage')->name('getPublic');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
 
-Route::resource('posts', 'postController');
+Route::resource('blogs', 'BlogController');
